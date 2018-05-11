@@ -22,7 +22,15 @@ function makeGrid() {
   var table = document.getElementById('pixelCanvas');
   table.innerHTML = '';
 
-  $("table").prepend('<caption>Every artist was first an amateur. - Ralph Waldo Emerson</caption>');
+  var quotes = [
+    "Every artist was first an amateur. - Ralph Waldo Emerson",
+    "Creativity takes courage. - Henri Matisse",
+    "We don\'t make mistakes, just happy little accidents. - Bob Ross",
+    "A picture is a poem without words. - Horace"
+  ];
+  var randomQuote = quotes[Math.floor(Math.random()*quotes.length)];
+
+  $("table").prepend('<caption>' + randomQuote + '</caption>');
 
   var rows = document.getElementById('sizePicker').elements.namedItem('height').value;
   var cols = document.getElementById('sizePicker').elements.namedItem('width').value;
